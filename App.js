@@ -9,7 +9,7 @@ import Autofill from "./Components/Autofill";
 import GetLocation from "./Components/GetLocation";
 import { create } from "apisauce";
 import Loader from "./Components/226-splashy-loader.gif";
-import { Provider } from "react-native-paper/lib/typescript/src/core/settings";
+import { Provider } from "react-redux";
 import store from "./Redux/RootRedux/Store";
 const api = create({
   baseURL: "http://api.openweathermap.org",

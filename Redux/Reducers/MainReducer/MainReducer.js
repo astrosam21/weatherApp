@@ -1,12 +1,11 @@
-const { initialState } = require("react-native-google-autocomplete");
-
+const initialState = {
+  id: "Hello",
+  title: "hello bro",
+};
 const MainReducer = (state = initialState, action) => {
   switch (action.type) {
-    case value:
-      break;
-
     default:
-      break;
+      return state;
   }
 };
 export default MainReducer;
