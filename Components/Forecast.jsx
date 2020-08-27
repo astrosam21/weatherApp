@@ -27,7 +27,7 @@ class Forecast extends Component {
                   flexDirection: "column",
                   // alignContent: "center",
                   alignItems: "center",
-                  paddingVertical: 50,
+                  paddingVertical: 15,
                   marginVertical: 5,
                   marginHorizontal: 10,
                 }}

@@ -56,35 +56,35 @@ class Homepage extends Component {
         >
           {this.props.currentData.main !== undefined ? (
             <View style={{ display: "flex", flexDirection: "column" }}>
-              <Text style={{ fontSize: 36, textAlign: "center" }}>
+              <Text style={{ fontSize: 32, textAlign: "center" }}>
                 {" "}
                 Weather Now
               </Text>
-              <Text style={{ fontSize: 30, textAlign: "center" }}>
+              <Text style={{ fontSize: 24, textAlign: "center" }}>
                 {this.props.currentData.name}, "
                 {this.props.currentData.sys.country}"
               </Text>
-              <Text style={{ fontSize: 30, textAlign: "center" }}>
+              <Text style={{ fontSize: 24, textAlign: "center" }}>
                 Temp : {Math.round(this.props.currentData.main.temp - 273)}{" "}
                 &deg;c
               </Text>
-              <Text style={{ fontSize: 30, textAlign: "center" }}>
+              <Text style={{ fontSize: 24, textAlign: "center" }}>
                 Feels like :{" "}
                 {Math.round(this.props.currentData.main.feels_like - 273)}{" "}
                 &deg;c
               </Text>
-              <Text style={{ fontSize: 30, textAlign: "center" }}>
+              <Text style={{ fontSize: 24, textAlign: "center" }}>
                 Max : {Math.round(this.props.currentData.main.temp_max - 273)}{" "}
                 &deg;c
               </Text>
-              <Text style={{ fontSize: 30, textAlign: "center" }}>
+              <Text style={{ fontSize: 24, textAlign: "center" }}>
                 Min : {Math.round(this.props.currentData.main.temp_min - 273)}{" "}
                 &deg;c
               </Text>
-              <Text style={{ fontSize: 30, textAlign: "center" }}>
+              <Text style={{ fontSize: 24, textAlign: "center" }}>
                 Humidity : {this.props.currentData.main.humidity}%
               </Text>
-              <Text style={{ fontSize: 30, textAlign: "center" }}>
+              <Text style={{ fontSize: 24, textAlign: "center" }}>
                 Description : {this.props.currentData.weather[0].main}
               </Text>
             </View>
