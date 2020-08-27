@@ -33,27 +33,6 @@ class Homepage extends Component {
   }
   componentDidMount() {}
 
-  //   onDetect = (val) => {
-  //     this.setState({ lat: val.lat, lon: val.lng });
-  //   api
-  //     .get(
-  //       `/data/2.5/forecast?lat=${this.state.lat}&lon=${this.state.lon}&appid=df35352212cec320cae9896339681714`
-  //     )
-  //     .then((response) => {
-  //       // console.log(response.data.city.name);
-  //       this.setState({ data: response.data });
-  //     })
-  //     .catch();
-  //   api
-  //     .get(
-  //       `/data/2.5/weather?lat=${this.state.lat}&lon=${this.state.lon}&appid=df35352212cec320cae9896339681714`
-  //     )
-  //     .then((response) => {
-  //       console.log(response.data);
-  //       this.setState({ current: response.data });
-  //     })
-  //     .catch();
-  //   };
   render() {
     console.log(this.props.forecastData);
     console.log(this.props.currentData);
