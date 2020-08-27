@@ -44,16 +44,14 @@ class Homepage extends Component {
             borderRadius: 7,
             backgroundColor: "#d6e0f0",
             border: "1px solid black",
-            marginHorizontal: 10,
             textAlign: "center",
             alignItems: "center",
             alignContent: "center",
             borderRadius: 7,
             backgroundColor: "#d6e0f0",
             marginHorizontal: 10,
-            position: "relative",
-            bottom: 20,
             paddingVertical: 20,
+            marginTop: "-13%",
           }}
         >
           {this.props.currentData.main !== undefined ? (
