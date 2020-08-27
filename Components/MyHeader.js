@@ -8,7 +8,7 @@ const MyHeader = () => {
       {/* <Appbar.BackAction onPress={this._goBack} / > */}
       <Appbar.Content
         title="weather app"
-        subtitle="Subtitle"
+        subtitle="Get Instant Weather and Forecast"
         style={{ alignItems: "center" }}
       />
       {/* <Appbar.Action icon="search" onPress={this._onSearch} />
