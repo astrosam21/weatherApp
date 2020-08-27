@@ -4,16 +4,11 @@ import { StyleSheet, Text, View, Button, TextInput, Image } from "react-native";
 import MyHeader from "./MyHeader";
 
 import GetLocation from "./GetLocation";
-import { create } from "apisauce";
 import Loader from "./226-splashy-loader.gif";
 import { getCoordsSuccess } from "../Redux/Actions/MainActions/Actions";
 
-// import {} from "./Redux/Actions/MainActions";
 import { connect } from "react-redux";
-const api = create({
-  baseURL: "http://api.openweathermap.org",
-  headers: { Accept: "Application/json" },
-});
+
 class Homepage extends Component {
   state = {
     text: "",
@@ -64,35 +59,55 @@ class Homepage extends Component {
     console.log(this.props.currentData);
     return (
       <View style={styles.container}>
-        <GetLocation onDetect={this.onDetect} />
-        <View style={{ alignItems: "center" }}>
+        <GetLocation />
+        <View
+          style={{
+            borderRadius: 7,
+            backgroundColor: "#d6e0f0",
+            border: "1px solid black",
+            marginHorizontal: 10,
+            textAlign: "center",
+            alignItems: "center",
+            alignContent: "center",
+            borderRadius: 7,
+            backgroundColor: "#d6e0f0",
+            marginHorizontal: 10,
+            position: "relative",
+            bottom: 20,
+            paddingVertical: 20,
+          }}
+        >
           {this.props.currentData.main !== undefined ? (
             <View style={{ display: "flex", flexDirection: "column" }}>
-              <Text style={{ fontSize: 30 }}>
+              <Text style={{ fontSize: 36, textAlign: "center" }}>
+                {" "}
+                Weather Now
+              </Text>
+              <Text style={{ fontSize: 30, textAlign: "center" }}>
                 {this.props.currentData.name}, "
                 {this.props.currentData.sys.country}"
               </Text>
-              <Text style={{ fontSize: 30 }}>
+              <Text style={{ fontSize: 30, textAlign: "center" }}>
                 Temp : {Math.round(this.props.currentData.main.temp - 273)}{" "}
                 &deg;c
               </Text>
-              <Text style={{ fontSize: 30 }}>
+              <Text style={{ fontSize: 30, textAlign: "center" }}>
                 Feels like :{" "}
                 {Math.round(this.props.currentData.main.feels_like - 273)}{" "}
                 &deg;c
               </Text>
-              <Text style={{ fontSize: 30 }}>
+              <Text style={{ fontSize: 30, textAlign: "center" }}>
                 Max : {Math.round(this.props.currentData.main.temp_max - 273)}{" "}
                 &deg;c
               </Text>
-              <Text style={{ fontSize: 30 }}>
+              <Text style={{ fontSize: 30, textAlign: "center" }}>
                 Min : {Math.round(this.props.currentData.main.temp_min - 273)}{" "}
                 &deg;c
               </Text>
-              <Text style={{ fontSize: 30 }}>
+              <Text style={{ fontSize: 30, textAlign: "center" }}>
                 Humidity : {this.props.currentData.main.humidity}%
               </Text>
-              <Text style={{ fontSize: 30 }}>
+              <Text style={{ fontSize: 30, textAlign: "center" }}>
                 Description : {this.props.currentData.weather[0].main}
               </Text>
             </View>
@@ -129,6 +144,5 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     // alignItems: "center",
-    textAlign: "center",
   },
 });

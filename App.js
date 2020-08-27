@@ -11,6 +11,7 @@ import store from "./Redux/RootRedux/Store";
 
 import { connect } from "react-redux";
 import Homepage from "./Components/Homepage";
+import Forecast from "./Components/Forecast";
 
 class App extends Component {
   state = {
@@ -30,6 +31,7 @@ class App extends Component {
         <View style={styles.container}>
           <MyHeader />
           <Homepage />
+          <Forecast />
         </View>
       </Provider>
     );
