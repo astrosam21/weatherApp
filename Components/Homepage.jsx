@@ -61,14 +61,41 @@ class Homepage extends Component {
   //   };
   render() {
     console.log(this.props.forecastData);
+    console.log(this.props.currentData);
     return (
       <View style={styles.container}>
         <GetLocation onDetect={this.onDetect} />
         <View style={{ alignItems: "center" }}>
-          {this.props.forecastData.city !== undefined ? (
-            <Text style={{ fontSize: 30 }}>
-              {this.props.forecastData.city.name}
-            </Text>
+          {this.props.currentData.main !== undefined ? (
+            <View style={{ display: "flex", flexDirection: "column" }}>
+              <Text style={{ fontSize: 30 }}>
+                {this.props.currentData.name}, "
+                {this.props.currentData.sys.country}"
+              </Text>
+              <Text style={{ fontSize: 30 }}>
+                Temp : {Math.round(this.props.currentData.main.temp - 273)}{" "}
+                &deg;c
+              </Text>
+              <Text style={{ fontSize: 30 }}>
+                Feels like :{" "}
+                {Math.round(this.props.currentData.main.feels_like - 273)}{" "}
+                &deg;c
+              </Text>
+              <Text style={{ fontSize: 30 }}>
+                Max : {Math.round(this.props.currentData.main.temp_max - 273)}{" "}
+                &deg;c
+              </Text>
+              <Text style={{ fontSize: 30 }}>
+                Min : {Math.round(this.props.currentData.main.temp_min - 273)}{" "}
+                &deg;c
+              </Text>
+              <Text style={{ fontSize: 30 }}>
+                Humidity : {this.props.currentData.main.humidity}%
+              </Text>
+              <Text style={{ fontSize: 30 }}>
+                Description : {this.props.currentData.weather[0].main}
+              </Text>
+            </View>
           ) : (
             <Image source={Loader} style={{ height: 100, width: 100 }}></Image>
           )}
@@ -83,6 +110,7 @@ const mapStateToProps = (state) => {
   return {
     val: state.MainReducer.coords,
     forecastData: state.MainReducer.forecastData,
+    currentData: state.MainReducer.currentData,
   };
 };
 
