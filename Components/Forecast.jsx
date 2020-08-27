@@ -8,6 +8,7 @@ import {
   TextInput,
   Image,
   ScrollView,
+  TouchableOpacity,
 } from "react-native";
 class Forecast extends Component {
   state = {};
