@@ -1,8 +1,9 @@
 import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 import Loader from "./226-splashy-loader.gif";
-
-export default class GetLocation extends React.Component {
+import { onDetect } from "../Redux/Actions/MainActions/Actions";
+import { connect } from "react-redux";
+class GetLocation extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -25,7 +26,7 @@ export default class GetLocation extends React.Component {
     );
   }
   geoSuccess = (position) => {
-    console.log(position.coords.latitude);
+    // console.log(position.coords.latitude);
 
     this.setState({
       ready: true,
@@ -57,6 +58,21 @@ export default class GetLocation extends React.Component {
     );
   }
 }
+const mapStateToProps = (state) => {
+  return {
+    val: state.MainReducer.coords,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onDetect: (val) => {
+      onDetect(val, dispatch);
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(GetLocation);
 
 const styles = StyleSheet.create({
   container: {

@@ -1,1 +1,3 @@
-export const actionTypes = {};
+export const GET_COORDS = "GET_COORDS";
+export const GET_WEATHER_DATA = "GET_WEATHER_DATA";
+export const GET_CURRENT_WEATHER_DATA = "GET_CURRENT_WEATHER_DATA";
